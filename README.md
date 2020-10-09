@@ -9,6 +9,20 @@ This class can be used to broadcast messages that you want multiple objects to b
 
 ## Usage  
 
+```
+pub.subscribe("0",msgA);
+pub.subscribe("1",msgB);
+pub.subscribe("2",msgC);
+pub.publish("Hello!")
+=> A received message: Hello!
+=> B received message: Hello!
+=> C received message: Hello!
+pub.unsubscribe("1")
+pub.publish("Hello?")
+=> A received message: Hello?
+=> C received message: Hello?
+```
+
 The [src/examples](src/examples) folder contains a few simple examples that use the `Publication` class.
 
 The [Docs](Docs.md) markdown file contains a quick explanation of all of the methods available, otherwise the [source](src/publications/Publication.java) should provide more information.
