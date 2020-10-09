@@ -54,6 +54,10 @@ public class Publication<K,V> {
 		public void inc () {
 			this.msgCount++;
 		}
+		public void touch() {
+			this.initTs = new Date();
+			this.msgCount = 0;
+		}
 		public boolean isExpired(int channelExpiryMs, int channelExpiryCount) {
 			if (channelExpiryMs >= 0 
 					&& (new Date().getTime() - this.initTs.getTime()) > channelExpiryMs) {
@@ -79,7 +83,7 @@ public class Publication<K,V> {
 	private int totalMessages = 0;
 	private int totalExpiredSubscribers = 0;
 	private LinkedList<V> history = new LinkedList<V>();
-	private int recordSize = -1;
+	private int recordSize = 1;
 	
 	// Builders
 	public Publication () {
@@ -136,6 +140,9 @@ public class Publication<K,V> {
 	public void setSubscriberExpiryMs (K id, int expiryMs) {
 		subscriptions.get(id).setExpiryMs(expiryMs);
 	}
+	public void touchSubscriber (K id) {
+		subscriptions.get(id).touch();
+	}
 	
 	// Utilities
 	public Date getInitTime() {
@@ -153,7 +160,7 @@ public class Publication<K,V> {
 	public int countExpiredSubscribers() {
 		return this.totalExpiredSubscribers;
 	}
-	public V lastMessage() {
+	public V getLastMessage() {
 		return history.peekLast();
 	}
 	public LinkedList<V> getAllRecordedMessages() {
