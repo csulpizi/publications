@@ -35,3 +35,30 @@ public class Example2 {
 		newHeadline(nyTimes,"crabs are crabby");
 	}
 }
+
+/*
+Output: 
+	
+	Rosie subscribes to NY Times!
+	Breaking news: tacos are tasty
+	Rosie understands that tacos are tasty
+	
+	Ryan subscribes to NY Times!
+	Breaking news: seafood is slimy
+	Ryan is skeptical that seafood is slimy
+	Rosie understands that seafood is slimy
+	
+	Breaking news: burgers are burgeois
+	Ryan is skeptical that burgers are burgeois
+	Rosie understands that burgers are burgeois
+	
+	Rosie's free trial is over, so she's no longer going to be subscribed to NY Times.
+	Breaking news: zebras are zesty
+	Ryan is skeptical that zebras are zesty
+	
+	Breaking news: ghosts are grimy
+	Ryan is skeptical that ghosts are grimy
+	
+	Now Ryan's free trial is over.
+	Breaking news: crabs are crabby
+*/

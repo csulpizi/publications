@@ -33,3 +33,28 @@ public class Example0 {
 		newHeadline(nyTimes, "woman dies from bleach poisoning");
 	}
 }
+
+/*
+Output:
+
+	Rosie subscribes to NY Times!
+	Breaking news: pandas are adorable
+	Rosie understands that pandas are adorable
+	
+	Ryan subscribes to NY Times!
+	Nelly subscribes to NY Times!
+	Breaking news: it's going to rain
+	Ryan is skeptical that it's going to rain
+	Rosie understands that it's going to rain
+	Nelly doesn't know how to read.
+	
+	Breaking news: bleach is poisonous
+	Ryan is skeptical that bleach is poisonous
+	Rosie understands that bleach is poisonous
+	Nelly doesn't know how to read.
+	
+	Nelly dies from bleach poisoning, her family cancels her subscription to NY times.
+	Breaking news: woman dies from bleach poisoning
+	Ryan is skeptical that woman dies from bleach poisoning
+	Rosie understands that woman dies from bleach poisoning
+ */
