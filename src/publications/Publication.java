@@ -125,7 +125,7 @@ public class Publication<K,V> {
 		}
 	}
 	
-	// Builders
+	// Parameters
 	public void setExpiryMs (int expiryMs) {
 		this.expiryMs = expiryMs;
 	}
