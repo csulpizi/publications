@@ -5,7 +5,7 @@ A lightweight Java class for broadcasting messages and triggering events
 
 The [src/examples](src/examples) folder contains a few simple examples that use the `Publication` class.
 
-The [Docs](Docs.md) markdown file contains a quick explanation of all of the methods available, otherwise the [source](src/publications) should provide more information.
+The [Docs](Docs.md) markdown file contains a quick explanation of all of the methods available, otherwise the [source](src/publications/Publication.java) should provide more information.
 
 The basic methods are as follows:
 - A `Publication` is a class that wraps a ConcurrentHashmap. The reference types `<K,V>` represent the class for the keys in the hashmap (aka subscriber ID's) and the class of the message type respectively. `java.util.UUID` is a good class for `<K>`, and `<V>` could be something simple like a `String` or something more complicated like a custom message class.
