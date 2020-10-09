@@ -3,7 +3,7 @@ A lightweight Java class for broadcasting messages and triggering events.
 
 ## Rationale 
 
-When developing a Java app, I realized that there weren't many lightweight custom listeners available, so I build a class `Publication`. A `Publication` is a colleciton of lambdas. Whenever a new message is posted to the `Publication`, the each lambda is called to consume the message. This allows you to 
+When developing a Java app, I realized that there weren't many lightweight custom listeners available, so I build the class `Publication`. A `Publication` is a colleciton of lambdas. Whenever a new message is posted to the `Publication`, the each lambda is called to consume the message. This allows you to 
 
 This class can be used to broadcast messages that you want multiple objects to be aware of. For example, you might have a collection of objects of various classes that you want to perform actions whenever an event is triggered. The event would sent them each a message to be consumed, which might have useful meta information or context around why the event was triggered, or maybe the message is a lambda itself that can be called by each object.
 
