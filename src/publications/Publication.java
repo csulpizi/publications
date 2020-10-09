@@ -85,24 +85,14 @@ public class Publication<K,V> {
 	private LinkedList<V> history = new LinkedList<V>();
 	private int recordSize = 1;
 	
-	// Builders
-	public Publication () {
-	}
-	public void setExpiryMs (int expiryMs) {
-		this.expiryMs = expiryMs;
-	}
-	public void setExpiryCount (int expiryCount) {
-		this.expiryCount = expiryCount;
-	}
+	// History
 	public void setRecordSize (int recordSize) {
 		this.recordSize = recordSize;
 	}
-	
-	// History
 	private void recordMessage(V message) {
 		if (this.recordSize > 0) {
 			history.addLast(message);
-			if (this.history.size() > this.recordSize) {
+			while (this.history.size() > this.recordSize) {
 				history.removeFirst();
 			}
 		}
@@ -133,6 +123,14 @@ public class Publication<K,V> {
 				s.getConsumer().accept(message);
 			}
 		}
+	}
+	
+	// Builders
+	public void setExpiryMs (int expiryMs) {
+		this.expiryMs = expiryMs;
+	}
+	public void setExpiryCount (int expiryCount) {
+		this.expiryCount = expiryCount;
 	}
 	public void setSubscriberExpiryCount (K id, int expiryCount) {
 		subscriptions.get(id).setExpiryCount(expiryCount);
