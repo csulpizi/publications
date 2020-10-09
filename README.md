@@ -1,5 +1,5 @@
-# publications
-A lightweight Java class for broadcasting messages and triggering events.
+# Publication <img src="emergency_meeting.png" alt="drawing" width="70" align="right"/>
+A lightweight Java class for broadcasting messages and triggering events. 
 
 ## Rationale 
 
@@ -8,6 +8,22 @@ When developing a Java app, I realized that there weren't many lightweight custo
 This class can be used to broadcast messages that you want multiple objects to be aware of. For example, you might have a collection of objects of various classes that you want to perform actions whenever an event is triggered. The event would sent them each a message to be consumed, which might have useful meta information or context around why the event was triggered, or maybe the message is a lambda itself that can be called by each object.
 
 ## Usage  
+
+```
+Rosie subscribes to NY Times!
+Ryan subscribes to NY Times!
+Nelly subscribes to NY Times!
+
+Breaking news: bleach is poisonous
+Ryan is skeptical that bleach is poisonous
+Rosie understands that bleach is poisonous
+Nelly doesn't know how to read.
+
+Nelly dies from bleach poisoning, her family cancels her subscription to NY times.
+Breaking news: woman dies from bleach poisoning
+Ryan is skeptical that woman dies from bleach poisoning
+Rosie understands that woman dies from bleach poisoning
+```
 
 The [src/examples](src/examples) folder contains a few simple examples that use the `Publication` class.
 
