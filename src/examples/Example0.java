@@ -11,7 +11,7 @@ public class Example0 {
 	public static void main(String [] args) {
 		Consumer<String> rosie = msg -> { System.out.println("Rosie understands that " + msg); };
 		Consumer<String> ryan = msg -> { System.out.println("Ryan is skeptical that " + msg); };
-		Consumer<String> nelly = msg -> { System.out.println("Nelly doesn't bother reading the newspaper"); };
+		Consumer<String> nelly = msg -> { System.out.println("Nelly doesn't know how to read."); };
 		
 		Publication<String,String> nyTimes = new Publication<String,String>();
 		

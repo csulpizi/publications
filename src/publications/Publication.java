@@ -39,19 +39,19 @@ public class Publication<K,V> {
 		private int expiryCount = -1;
 		private int expiryMs = -1;
 		
-		Subscription (Consumer<T> f) {
+		Subscription(Consumer<T> f) {
 			this.f = f;
 		}
-		public void setExpiryCount (int expiryCount) {
+		public void setExpiryCount(int expiryCount) {
 			this.expiryCount = expiryCount;
 		}
-		public void setExpiryMs (int expiryMs) {
+		public void setExpiryMs(int expiryMs) {
 			this.expiryMs = expiryMs;
 		}
-		public Consumer<T> getConsumer () {
+		public Consumer<T> getConsumer() {
 			return this.f;
 		}
-		public void inc () {
+		public void inc() {
 			this.msgCount++;
 		}
 		public void touch() {
@@ -59,7 +59,7 @@ public class Publication<K,V> {
 			this.msgCount = 0;
 		}
 		public boolean isExpired(int channelExpiryMs, int channelExpiryCount) {
-			if (channelExpiryMs >= 0 
+			if(channelExpiryMs >= 0 
 					&& (new Date().getTime() - this.initTs.getTime()) > channelExpiryMs) {
 				return true;
 			} else if (this.expiryMs >= 0 
@@ -86,7 +86,7 @@ public class Publication<K,V> {
 	private int recordSize = 1;
 	
 	// History
-	public void setRecordSize (int recordSize) {
+	public void setRecordSize(int recordSize) {
 		this.recordSize = recordSize;
 	}
 	private void recordMessage(V message) {
@@ -125,20 +125,20 @@ public class Publication<K,V> {
 		}
 	}
 	
-	// Parameters
-	public void setExpiryMs (int expiryMs) {
+	// Expiry
+	public void setExpiryMs(int expiryMs) {
 		this.expiryMs = expiryMs;
 	}
-	public void setExpiryCount (int expiryCount) {
+	public void setExpiryCount(int expiryCount) {
 		this.expiryCount = expiryCount;
 	}
-	public void setSubscriberExpiryCount (K id, int expiryCount) {
+	public void setSubscriberExpiryCount(K id, int expiryCount) {
 		subscriptions.get(id).setExpiryCount(expiryCount);
 	}
-	public void setSubscriberExpiryMs (K id, int expiryMs) {
+	public void setSubscriberExpiryMs(K id, int expiryMs) {
 		subscriptions.get(id).setExpiryMs(expiryMs);
 	}
-	public void touchSubscriber (K id) {
+	public void touchSubscriber(K id) {
 		subscriptions.get(id).touch();
 	}
 	
