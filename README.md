@@ -10,19 +10,11 @@ This class can be used to broadcast messages that you want multiple objects to b
 ## Usage  
 
 ```
-Rosie subscribes to NY Times!
-Ryan subscribes to NY Times!
-Nelly subscribes to NY Times!
-
-Breaking news: bleach is poisonous
-Ryan is skeptical that bleach is poisonous
-Rosie understands that bleach is poisonous
-Nelly doesn't know how to read.
-
-Nelly dies from bleach poisoning, her family cancels her subscription to NY times.
-Breaking news: woman dies from bleach poisoning
-Ryan is skeptical that woman dies from bleach poisoning
-Rosie understands that woman dies from bleach poisoning
+Publication<String,String> nyTimes = new Publication<String,String>();
+Consumer<String> bob = msg -> { System.out.println("Bob reads the article " + msg); };
+nyTimes.subscribe("bob", bob);
+newHeadline(nyTimes, "Pandas Are Adorable");
+=> Bob reads the article Pandas Are Adorable
 ```
 
 The [src/examples](src/examples) folder contains a few simple examples that use the `Publication` class.
