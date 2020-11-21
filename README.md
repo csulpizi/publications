@@ -1,5 +1,5 @@
 # Publication <img src="emergency_meeting.png" alt="drawing" width="70" align="right"/>
-A lightweight Java class for broadcasting messages and triggering events. 
+A lightweight Java class for broadcasting messages and triggering events synchronously.
 
 ## Rationale 
 
