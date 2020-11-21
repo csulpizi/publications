@@ -14,7 +14,9 @@ Publication<String,String> nyTimes = new Publication<String,String>();
 Consumer<String> bob = msg -> { System.out.println("Bob reads the article " + msg); };
 nyTimes.subscribe("bob", bob);
 newHeadline(nyTimes, "Pandas Are Adorable");
+System.out.println("This is printed after Bob reads the article");
 => Bob reads the article Pandas Are Adorable
+=> This is printed after Bob reads the article
 ```
 
 The [src/examples](src/examples) folder contains a few simple examples that use the `Publication` class.
