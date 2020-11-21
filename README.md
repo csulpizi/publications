@@ -33,3 +33,4 @@ The basic methods are as follows:
 - A Publication can be given expiration conditions using the methods `addExpiryCount` and `addExpiryMs`. If a subscriber has consumed the maximum number of messages or has been subscribed for longer than the maximum time specified, that subscriber will be unsubscribed when a new message is published, before the subscriber consumes the message
 - Each subscriber can also be given expiration conditions using the methods `addSubscriberExpiryCount` and `addSubscriberExpiryMs`. 
 - A Publication can keep track of past messages. Use the `addRecordSize` method to specify a maximum number of records kept, and the `getLastMessage` and `getAllRecordedMessages` methods to access the history. The default record size is 1.
+- Of course, a separate thread can be used to use Publications asynchronously
